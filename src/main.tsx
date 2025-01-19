@@ -1,7 +1,4 @@
 import { createRoot } from "react-dom/client";
-
-import React from "react";
-import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { useTransition, animated } from "react-spring";
 
