@@ -4,7 +4,7 @@ const dimension = { width: 1167, height: 1183 };
 
 const defaultState = {
     ...dimension,
-    url: `https://react-puzzle-game-azure.vercel.app/public/image.jpg`,
+    url: `https://react-puzzle-game-azure.vercel.app/image.jpg`,
 };
 
 const imageReducer = (state = defaultState, action) => {
