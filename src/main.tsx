@@ -17,9 +17,9 @@ import { gameModeUrlMap, gameMode } from "./store/constants";
 function App() {
     const location = useLocation();
     const transitions = useTransition(location, (location) => location.pathname, {
-        from: { transform: "translateX(100vw)" },
-        enter: { transform: "translateX(0)" },
-        leave: { transform: "translateX(-100vw)" },
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
         delay: 500,
     });
 
