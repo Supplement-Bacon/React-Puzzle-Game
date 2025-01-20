@@ -1,6 +1,6 @@
 import { SET_IMAGE_URL, SET_IMAGE_DIMENSION } from "../constants";
 
-const dimension = { width: 1167, height: 1183 };
+const dimension = { width: 500, height: 500 };
 
 const defaultState = {
     ...dimension,
