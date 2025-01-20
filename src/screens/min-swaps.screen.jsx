@@ -57,7 +57,7 @@ export const MinSwapsScreen = () => {
 
                 {areTilesAligned ? (
                     <>
-                        <h1 style={{ color: "green" }}>All tiles are aligned, You won!😃👍</h1>
+                        <h1 style={{ color: "green" }}>On redirige vers le!😃👍</h1>
                         <Link to="/">
                             <Button>New Game</Button>
                         </Link>
