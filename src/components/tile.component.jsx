@@ -22,7 +22,7 @@ const Container = styled.button`
     display: inline-block;
     height: ${({ height }) => height}px;
     width: ${({ width }) => width}px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 0;
     background-image: ${(props) => "url(" + props.imageUrl + ")" || "none"};
     background-repeat: no-repeat;
     /* background-color: dodgerblue; */
@@ -36,7 +36,7 @@ const Container = styled.button`
 
     &.active {
         box-shadow: 0 2px 25px rgba(0, 0, 0, 0.5);
-        border: 3px solid rgba(255, 255, 255, 0.25);
+        border: 3px solid white;
         z-index: 2;
         animation: ${wobble} 1s infinite;
     }
