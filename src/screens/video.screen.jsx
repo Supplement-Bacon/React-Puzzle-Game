@@ -33,7 +33,7 @@ const Container = styled.div`
 const ButtonsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     margin: auto;
     padding: 1em;
     padding-bottom: 0;

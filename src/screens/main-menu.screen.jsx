@@ -74,13 +74,14 @@ export const BodyContent = () => {
                 height: width > 500 ? 500 : 400,
             },
         });
+        const url =
+            width > 500
+                ? "https://react-puzzle-game-azure.vercel.app/500.png"
+                : "https://react-puzzle-game-azure.vercel.app/400.png";
         dispatch({
             type: SET_IMAGE_URL,
             payload: {
-                url:
-                    width > 500
-                        ? "https://react-puzzle-game-azure.vercel.app/500.png"
-                        : "https://react-puzzle-game-azure.vercel.app/400.png",
+                url: url,
             },
         });
     }, []);
