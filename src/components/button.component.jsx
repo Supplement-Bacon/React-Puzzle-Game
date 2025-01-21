@@ -5,13 +5,12 @@ export const Button = styled.button`
     font-size: 1.4em;
     margin-bottom: 1em;
     cursor: pointer;
-    background: "#fff";
     transition: all 0.2s;
     color: black;
     outline: 0;
     border: 0;
-
     &:hover {
-        opacity: 0.9;
+        background: #fff;
+        color: #000;
     }
 `;

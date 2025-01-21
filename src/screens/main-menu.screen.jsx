@@ -12,6 +12,8 @@ import {
     gameModeUrlMap,
     SELECT_GAME_MODE,
     SET_BOARD_DIMENSIONS,
+    SET_IMAGE_DIMENSION,
+    SET_IMAGE_URL,
 } from "../store/constants";
 
 const Heading = styled.h1`
@@ -44,6 +46,10 @@ const ButtonsContainer = styled.div`
 
 export const StyledButton = styled(Button)`
     min-width: 10em;
+    font-size: 20px;
+    background: transparent;
+    border: 2px solid white;
+    color: #fff;
 `;
 
 export const BodyContent = () => {
@@ -52,7 +58,7 @@ export const BodyContent = () => {
 
     useSelectedGameMode();
     const selectedGameMode = useSelectedGameMode();
-
+    const width = window.innerWidth;
     useEffect(() => {
         const payload = {
             rows: 3,
@@ -60,6 +66,23 @@ export const BodyContent = () => {
         };
         dispatch({ type: SELECT_GAME_MODE, payload: gameMode.minSwaps });
         dispatch({ type: SET_BOARD_DIMENSIONS, payload });
+        console.log(width);
+        dispatch({
+            type: SET_IMAGE_DIMENSION,
+            payload: {
+                width: width > 500 ? 500 : 400,
+                height: width > 500 ? 500 : 400,
+            },
+        });
+        dispatch({
+            type: SET_IMAGE_URL,
+            payload: {
+                url:
+                    width > 500
+                        ? "https://react-puzzle-game-azure.vercel.app/500.png"
+                        : "https://react-puzzle-game-azure.vercel.app/400.png",
+            },
+        });
     }, []);
 
     const handleClick = () => {
@@ -72,8 +95,8 @@ export const BodyContent = () => {
     return (
         <Container>
             <ButtonsContainer>
-                <img src={logo} style={{ width: "70%", maxWidth: 450, marginBottom: 50 }} />
-                <StyledButton onClick={handleClick}>Start game</StyledButton>
+                <img src={logo} style={{ width: "100%", maxWidth: 450, marginBottom: 50 }} />
+                <StyledButton onClick={handleClick}>START GAME</StyledButton>
             </ButtonsContainer>
         </Container>
     );

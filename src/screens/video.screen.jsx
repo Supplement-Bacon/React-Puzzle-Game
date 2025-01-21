@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../assets/logo.png";
-
+import landscape from "../assets/landscape.mp4";
+import portrait from "../assets/portrait.mp4";
 import { LayoutScreen } from "./layout.screen";
 import { Button } from "../components/button.component";
 import { useDispatch } from "react-redux";
@@ -49,6 +50,7 @@ export const StyledButton = styled(Button)`
 export const BodyContent = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const width = window.innerWidth;
 
     useSelectedGameMode();
     const selectedGameMode = useSelectedGameMode();
@@ -71,7 +73,17 @@ export const BodyContent = () => {
 
     return (
         <Container>
-            <ButtonsContainer>Teaser</ButtonsContainer>
+            <ButtonsContainer>
+                {width > 918 ? (
+                    <video width="100%" controls autoPlay>
+                        <source src={landscape} type="video/mp4" />
+                    </video>
+                ) : (
+                    <video width="100%" controls autoPlay>
+                        <source src={portrait} type="video/mp4" />
+                    </video>
+                )}
+            </ButtonsContainer>
         </Container>
     );
 };
