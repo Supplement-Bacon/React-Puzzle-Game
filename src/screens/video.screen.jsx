@@ -65,9 +65,6 @@ export const BodyContent = () => {
     }, []);
 
     const handleClick = () => {
-        console.log(selectedGameMode);
-        console.log(selectedGameMode);
-
         history.push(gameModeUrlMap[selectedGameMode]);
     };
 

@@ -66,7 +66,6 @@ export const BodyContent = () => {
         };
         dispatch({ type: SELECT_GAME_MODE, payload: gameMode.minSwaps });
         dispatch({ type: SET_BOARD_DIMENSIONS, payload });
-        console.log(width);
         dispatch({
             type: SET_IMAGE_DIMENSION,
             payload: {
@@ -87,9 +86,6 @@ export const BodyContent = () => {
     }, []);
 
     const handleClick = () => {
-        console.log(selectedGameMode);
-        console.log(selectedGameMode);
-
         history.push(gameModeUrlMap[selectedGameMode]);
     };
 

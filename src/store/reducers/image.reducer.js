@@ -14,7 +14,6 @@ const imageReducer = (state = defaultState, action) => {
             return { ...state, width, height };
         case SET_IMAGE_URL:
             const { url } = action.payload;
-            console.log(url);
             return { ...state, url };
         default:
             return state;

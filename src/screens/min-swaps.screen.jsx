@@ -46,12 +46,9 @@ export const MinSwapsScreen = () => {
     useEffect(() => {
         if (isThresholdExceeded || areTilesAligned) {
             dispatch({ type: UPDATE_GAME_STATUS, payload: false });
-            console.log("yolo");
-
             history.push("video");
         } else {
             dispatch({ type: UPDATE_GAME_STATUS, payload: true });
-            console.log("yola");
         }
     }, [isThresholdExceeded, areTilesAligned, dispatch]);
 

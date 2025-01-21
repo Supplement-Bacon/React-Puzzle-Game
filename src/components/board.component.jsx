@@ -30,7 +30,6 @@ export const Board = () => {
 
     const [numOfRows, numOfColumns] = useSelector(({ board }) => [board.rows, board.columns]);
     const imageUrl = useSelector(({ image }) => image.url);
-    console.log(imageUrl);
     const [imageWidth, imageHeight] = useSelector(({ image }) => [image.width, image.height]);
 
     const randomPositions = useMemo(() => {
