@@ -5,9 +5,12 @@ body {
 }
 
 body {
-    background-color: #000;
+    background: url(assets/background.png);
+    background-size: cover;
+    background-position: center;
     margin: 0;
     overflow: hidden;
+    font-family: Helvetica, sans-serif;
 }
 
 * {
@@ -25,4 +28,9 @@ body {
 
 .row {
     margin-bottom: -4px;
+}
+a,
+p,
+span {
+    text-transform: uppercase !important;
 }

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { LayoutScreen } from "./layout.screen";
 import { Button } from "../components/button.component";
 import { DefaultNavContent } from "../components/default-nav-content.component";
 import { DifficultyChooser } from "../components/difficulty-chooser.component";
+import { useDispatch } from "react-redux";
+import { useSelectedGameMode } from "../hooks/selected-game-mode.hook";
+import { gameMode, SELECT_GAME_MODE } from "../store/constants";
 
 const Heading = styled.h1`
     text-align: center;
@@ -24,6 +27,13 @@ const ButtonsContainer = styled.div`
 `;
 
 export const DifficultyLevelScreen = () => {
+    const dispatch = useDispatch();
+    useSelectedGameMode();
+
+    useEffect(() => {
+        dispatch({ type: SELECT_GAME_MODE, payload: gameMode.minSwaps });
+    }, []);
+
     return (
         <LayoutScreen navbar={<DefaultNavContent />}>
             <Heading>Difficulty Level</Heading>

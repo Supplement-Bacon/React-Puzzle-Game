@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { BoardContainer } from "../components/board-container.component";
 import { Board } from "../components/board.component";
@@ -36,6 +36,8 @@ const useThresholdExceeded = (numOfSwaps) => {
 
 export const MinSwapsScreen = () => {
     const swapsDone = useSwapsCount();
+    const history = useHistory();
+
     const isThresholdExceeded = useThresholdExceeded(swapsDone);
     const threshold = useSelector((state) => state.game.minSwapsMode.threshold);
     const areTilesAligned = useTilesPositionStatus();
@@ -44,34 +46,19 @@ export const MinSwapsScreen = () => {
     useEffect(() => {
         if (isThresholdExceeded || areTilesAligned) {
             dispatch({ type: UPDATE_GAME_STATUS, payload: false });
+            console.log("yolo");
+
+            history.push("video");
         } else {
             dispatch({ type: UPDATE_GAME_STATUS, payload: true });
+            console.log("yola");
         }
     }, [isThresholdExceeded, areTilesAligned, dispatch]);
 
     return (
         <>
             <BoardContainer>
-                <p>Solve Puzzle in {threshold} Swaps or less</p>
                 <Board />
-
-                {areTilesAligned ? (
-                    <>
-                        <h1 style={{ color: "green" }}>On redirige vers le!😃👍</h1>
-                        <Link to="/">
-                            <Button>New Game</Button>
-                        </Link>
-                    </>
-                ) : isThresholdExceeded ? (
-                    <>
-                        <h2>Max Number of Swaps Exceeded, Shame on you loser👿👎</h2>
-                        <Link to="/">
-                            <Button>New Game</Button>
-                        </Link>
-                    </>
-                ) : (
-                    <h2 style={{ color: "#fff" }}>Swaps Done: {swapsDone}</h2>
-                )}
             </BoardContainer>
         </>
     );

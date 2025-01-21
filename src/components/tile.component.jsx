@@ -40,7 +40,9 @@ const Container = styled.button`
         z-index: 2;
         animation: ${wobble} 1s infinite;
     }
-
+    &:hover {
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+    }
     &:disabled {
         cursor: not-allowed;
     }

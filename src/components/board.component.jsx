@@ -11,6 +11,7 @@ const StyledBoard = styled.div`
     position: relative;
     width: ${({ width }) => width}px;
     height: ${({ height }) => height}px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
 `;
 
 const useSwapDispatcher = () => {

@@ -71,14 +71,11 @@ export const BodyContent = () => {
 
     return (
         <Container>
-            <ButtonsContainer>
-                <img src={logo} style={{ width: "70%", maxWidth: 450, marginBottom: 50 }} />
-                <StyledButton onClick={handleClick}>Start game</StyledButton>
-            </ButtonsContainer>
+            <ButtonsContainer>Teaser</ButtonsContainer>
         </Container>
     );
 };
 
-export const MainMenuScreen = () => {
+export const VideoScreen = () => {
     return <LayoutScreen hideNavbar body={<BodyContent />} />;
 };

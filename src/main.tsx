@@ -13,6 +13,7 @@ import "./styles.css";
 import store from "./store";
 import { ModeSelectScreen } from "./screens/mode-select.screen";
 import { gameModeUrlMap, gameMode } from "./store/constants";
+import { VideoScreen } from "./screens/video.screen";
 
 function App() {
     const location = useLocation();
@@ -26,7 +27,14 @@ function App() {
     return (
         <div className="App">
             {transitions.map(({ item, key, props: style }) => (
-                <animated.div key={key} style={style}>
+                <animated.div
+                    key={key}
+                    style={{
+                        ...style,
+                        width: "100vw",
+                        height: "100vh",
+                    }}
+                >
                     <Switch location={item}>
                         <Route path={gameModeUrlMap[gameMode.minSwaps]}>
                             <MinSwapsScreen />
@@ -42,6 +50,10 @@ function App() {
 
                         <Route path="/mode-select">
                             <ModeSelectScreen />
+                        </Route>
+
+                        <Route path="/video">
+                            <VideoScreen />
                         </Route>
 
                         <Route path="/" exact>

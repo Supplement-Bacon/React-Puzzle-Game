@@ -15,7 +15,7 @@ const defaultState = {
     tilesStatus: {},
     gameMode: gameMode.none,
     minSwapsMode: {
-        threshold: 15,
+        threshold: 150,
     },
     isPlaying: true,
 };

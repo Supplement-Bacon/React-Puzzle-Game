@@ -16,7 +16,8 @@ const LayoutContainer = styled.div`
 
 const StyledScreenContainer = styled(animated.div)`
     flex: 1;
-    border: "2px solid green";
+    width: 100vw;
+    height: 100vh;
 `;
 
 const ScreenContainer = (prop) => {
