@@ -14,6 +14,9 @@ import store from "./store";
 import { ModeSelectScreen } from "./screens/mode-select.screen";
 import { gameModeUrlMap, gameMode } from "./store/constants";
 import { VideoScreen } from "./screens/video.screen";
+import { inject } from "@vercel/analytics";
+
+inject();
 
 function App() {
     const location = useLocation();
